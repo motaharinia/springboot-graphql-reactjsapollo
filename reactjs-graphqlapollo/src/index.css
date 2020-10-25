@@ -1,0 +1,44 @@
+body {
+  margin: 0;
+  font-family: IRANSans, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif,IRANSans;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: IRANSans,source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+@font-face{
+  font-family:'IRANSans';
+  src:url("/public/fonts/IRANSans-Medium-web.eot?10");
+  src:url("/public/fonts/IRANSans-Medium-web.eot?10#iefix")
+  format("embedded-opentype"),url("/public/fonts/IRANSans-Medium-web.woff2?10")
+  format("woff2"),url("/public/fonts/IRANSans-Medium-web.woff?10")
+  format("woff"),url("/public/fonts/IRANSans-Medium-web.ttf?10")
+  format("ttf");
+  font-weight:bold
+}
+@font-face{
+  font-family:'IRANSans';
+  src:url("/public/fonts/IRANSans-web.eot?10");
+  src:url("/public/fonts/IRANSans-web.eot?10#iefix")
+  format("embedded-opentype"),url("/public/fonts/IRANSans-web.woff2?10")
+  format("woff2"),url("/public/fonts/IRANSans-web.woff?10")
+  format("woff"),url("/public/fonts/IRANSans-web.ttf?10")
+  format("ttf");
+  font-weight:normal
+}
+@font-face{
+  font-family:'Custom';
+  src:url("/public/fonts/IRANSans-web.eot?10");
+  src:url("/public/fonts/IRANSans-web.eot?10#iefix")
+  format("embedded-opentype"),url("/public/fonts/IRANSans-web.woff2?10")
+  format("woff2"),url("/public/fonts/IRANSans-web.woff?10")
+  format("woff"),url("/public/fonts/IRANSans-web.ttf?10")
+  format("ttf");
+  font-weight:normal
+}

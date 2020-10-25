@@ -1,0 +1,150 @@
+﻿//******************************* readGrid
+مثال1:
+
+{
+  readGrid(
+    searchViewTypeEnum : ADMIN_USER_BRIEF
+    searchFilterModelJson: "{\"restrictionList\":[{\"fieldName\":\"firstName\",\"fieldOperation\":\"MATCH\",\"fieldValue\":\"mostafa\",\"nextConditionOperator\":\"AND\"},{\"fieldName\":\"defaultAdminUserContact.address\",\"fieldOperation\":\"MATCH\",\"fieldValue\":\"Shahrak Gharb\",\"nextConditionOperator\":\"AND\"}],\"sortList\":[{\"fieldName\":\"firstName\",\"type\":\"ASC\"},{\"fieldName\":\"lastName\",\"type\":\"DSC\"},{\"fieldName\":\"defaultAdminUserContact.address\",\"type\":\"DSC\"},{\"fieldName\":\"gender.value\",\"type\":\"DSC\"}],\"page\":0,\"rows\":20}"
+  )  
+  {
+    page
+    records
+    searchDataColModelList {
+      index
+      name
+    }
+    searchDataRowModelList {
+      id
+      rowCellArray
+    }
+    total
+    userData
+  }
+}
+
+
+مثال2:
+
+{
+  readGrid(
+    searchViewTypeEnum : ADMIN_USER_BRIEF
+    searchFilterModelJson: "{\"restrictionList\":[],\"sortList\":[{\"fieldName\":\"firstName\",\"type\":\"ASC\"},{\"fieldName\":\"lastName\",\"type\":\"DSC\"},{\"fieldName\":\"defaultAdminUserContact.address\",\"type\":\"DSC\"},{\"fieldName\":\"gender.value\",\"type\":\"DSC\"}],\"page\":0,\"rows\":20}"
+  )  
+  {
+    page
+    records
+    searchDataColModelList {
+      index
+      name
+    }
+    searchDataRowModelList {
+      id
+      rowCellArray
+    }
+    total
+    userData
+  }
+}
+
+//******************************* readGridByModel
+مثال1:
+
+{
+  readGridByModel(
+    searchViewTypeEnum : ADMIN_USER_BRIEF
+    searchFilterModel: {
+      sortList: [
+        { fieldName: "firstName", type: ASC }
+        { fieldName: "lastName", type: DSC }
+      ]
+      restrictionList: [
+        {
+          fieldName: "firstName"
+          fieldOperation: MATCH
+          fieldValue: "mostafa"
+          nextConditionOperator: AND
+        }
+      ]
+      page: 0
+      rows: 20
+    }
+  ) {
+    page
+    records
+    searchDataColModelList {
+      name
+    }
+    searchDataRowModelList {
+      id
+      rowCellArray
+    }
+  }
+}
+
+
+مثال2:
+
+{
+  readGridByModel(
+    searchFilterModel: {}
+  ) {
+    page
+    records
+    searchDataColModelList {
+      name
+    }
+    searchDataRowModelList {
+      id
+      rowCellArray
+    }
+  }
+}
+
+//******************************* readById
+{
+  common_adminUser_readById(id: 1) {
+    username
+    firstName
+    lastName
+  }
+}
+
+
+//******************************* create
+mutation {
+  create(adminUserModel: { firstName: "Maryam" lastName:"Azish" username:"mm1@gmail.com" password:"123456" dateOfBirth: {day:20 month: 6 year: 1399} defaultAdminUserContact_address: "Tehran" skillList: {title:"computer"} gender_id: 2 }) {
+    id
+    username
+  }
+}
+
+//******************************* update
+mutation {
+  update(adminUserModel: { id:24 firstName: "Maryam111" lastName:"Azish" username:"mm1@gmail.com" password:"123456" dateOfBirth: {day:20 month: 6 year: 1399} defaultAdminUserContact_address: "Tehran NaziAbad" skillList: {title:"computer"} gender_id: 1 }) {
+    id
+    username
+  }
+}
+
+//******************************* delete
+mutation {
+  delete(id: 24) {
+    id
+    username
+  }
+}
+
+//******************************* subscription
+subscription{
+  briefMesseages(userId:2){
+    notifyCounter
+  }
+}
+
+
+
+@GraphQLType, @GraphQLInterface ,@GraphQLUnion ,  ,  @GraphQLContext  , @GraphQLEnvironment , @GraphQLInputField , @GraphQLApi
+
+@GraphQLArgument , @GraphQLEnumValue(https://stackoverflow.com/questions/64039899/how-to-implement-query-filters-and-sorting-using-graphql-spqr)
+
+@GraphQLId
